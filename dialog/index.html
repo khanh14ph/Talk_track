@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Login V18</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+  <script src="https://cdn.datatables.net/rowreorder/1.2.7/js/dataTables.rowReorder.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.datatables.net/rowreorder/1.2.7/css/rowReorder.dataTables.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.dataTables.min.css">
+  <script src="https://cdn.datatables.net/plug-ins/1.10.21/sorting/date-eu.js"></script>
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.datatables.net/v/bs4/dt-1.10.21/rg-1.1.2/datatables.min.css" />
+  <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.21/rg-1.1.2/datatables.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+  <div class="call-container">
+    <h1>Danh sách cuộc gọi</h1>
+    <br>
+    <div style="text-align:center; color: black; font-weight:bold">
+      <label class="radio-inline text-dark">
+        <input type="radio" name="optradio" value="all" checked>&nbsp;Tất cả&nbsp;&nbsp;&nbsp;
+      </label>
+      <label class="radio-inline text-dark">
+        <input type="radio" name="optradio" value="0">&nbsp;Chưa đánh giá&nbsp;&nbsp;&nbsp;
+      </label>
+      <label class="radio-inline text-dark">
+        <input type="radio" name="optradio" value="2">&nbsp;Đã đánh giá, đạt yêu cầu&nbsp;&nbsp;&nbsp;
+      </label>
+      <label class="radio-inline text-dark">
+        <input type="radio" name="optradio" value="3">&nbsp;Đã đánh giá, không đạt yêu cầu&nbsp;&nbsp;&nbsp;
+      </label>
+    </div>
+    <hr>
+    <table id="tb_call" class="display nowrap table table-bordered table-hover" style="width:100%">
+      <thead class="text-light" style="background-color: #13A25D">
+        <tr>
+          <th>Tên cuộc gọi</th>
+          <th>Nhân viên xử lý</th>
+          <th>Đầu số gọi đi</th>
+          <th>Đầu số bắt máy</th>
+          <th>Trạng thái</th>
+          <th>Chất lượng</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="text-center text-light bg-dark" colspan="7">Thứ bảy, ngày 28/10/2023</th>
+        </tr>
+        <tr>
+          <td>ABCD0001.wav</td>
+          <td>Thành Phạm</td>
+          <td>0981234567</td>
+          <td>0987654321</td>
+          <td class="text-success font-weight-bold">Đã đánh giá</td>
+          <td class="text-success font-weight-bold">Đạt</td>
+          <td><button class="btn btn-warning btn-detail">Xem chi tiết</button></td>
+        </tr>
+        <tr>
+          <td>ABCD0012.wav</td>
+          <td>Thu Huyền</td>
+          <td>0981234567</td>
+          <td>0987654321</td>
+          <td class="text-success font-weight-bold">Đã đánh giá</td>
+          <td class="text-success font-weight-bold">Đạt</td>
+          <td><button class="btn btn-warning btn-detail">Xem chi tiết</button></td>
+        </tr>
+        <tr>
+          <td>ABCD0013.wav</td>
+          <td>Thái Hòa</td>
+          <td>0981234567</td>
+          <td>0987654321</td>
+          <td class="text-warning font-weight-bold">Chưa đánh giá</td>
+          <td>-</td>
+          <td><button class="btn btn-warning btn-detail">Xem chi tiết</button></td>
+        </tr>
+        <tr>
+          <th class="text-center text-light bg-dark" colspan="7">Chủ nhật, ngày 29/10/2023</th>
+        </tr>
+        <tr>
+          <td>ABCD0014.wav</td>
+          <td>Ngọc Quân</td>
+          <td>0981234567</td>
+          <td>0987654321</td>
+          <td class="text-success font-weight-bold">Đã đánh giá</td>
+          <td class="text-danger font-weight-bold">Không đạt</td>
+          <td><button class="btn btn-warning btn-detail">Xem chi tiết</button></td>
+        </tr>
+        <tr>
+          <td>ABCD0015.wav</td>
+          <td>Duy Khánh</td>
+          <td>0981234567</td>
+          <td>0987654321</td>
+          <td class="text-warning font-weight-bold">Chưa đánh giá</td>
+          <td>-</td>
+          <td><button class="btn btn-warning btn-detail">Xem chi tiết</button></td>
+        </tr>
+        <tr>
+          <td>ABCD0016.wav</td>
+          <td>Thành Phạm</td>
+          <td>0981234567</td>
+          <td>0987654321</td>
+          <td class="text-warning font-weight-bold">Chưa đánh giá</td>
+          <td>-</td>
+          <td><button class="btn btn-warning btn-detail">Xem chi tiết</button></td>
+        </tr>
+        <tr>
+          <td>ABCD0017.wav</td>
+          <td>Thu Huyền</td>
+          <td>0981234567</td>
+          <td>0987654321</td>
+          <td class="text-warning font-weight-bold">Chưa đánh giá</td>
+          <td>-</td>
+          <td><button class="btn btn-warning btn-detail">Xem chi tiết</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <hr />
+  </div>
+  <div class="call-detail" style="display:none">
+    <button type="button" class="btn btn-warning" id="come_back" style="margin-left: 5%;">Quay lại</button>
+    <hr>
+    <h1 style="margin-left: 5%;">Chi tiết cuộc gọi</h1>
+    <audio id="audio" style="text-align: center;" controls>
+      <source src="demo.wav" type="audio/wav">
+    </audio>
+    <hr>
+    <table id="tb_call" class="display nowrap table table-bordered table-hover" style="width: 90%;margin-left: 5%;">
+      <thead class="text-light" style="background-color: #13A25D">
+        <tr>
+          <th>Thời điểm</th>
+          <th>Người nói</th>
+          <th>Nội dung</th>
+          <th>Cảm xúc</th>
+          <th>Ý định</th>
+          <th>Thông tin chi tiết</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>0:00</td>
+          <td>Call Bot</td>
+          <td>Em chào anh ạ, tổ chăm sóc khách hàng của Sacombank xin nghe ạ!</td>
+          <td class="text-success">Tích cực</td>
+          <td>-</td>
+          <td>-</td>
+          <td><button class="btn btn-warning btn-detail" id="btn-1">Nghe thử</button></td>
+        </tr>
+        <tr>
+          <td>0:04</td>
+          <td>Khách hàng</td>
+          <td>Chào bạn mình muốn kích hoạt thẻ tự động.</td>
+          <td>Bình thường</td>
+          <td>Mở thẻ</td>
+          <td>-</td>
+          <td><button class="btn btn-warning btn-detail" id="btn-2">Nghe thử</button></td>
+        </tr>
+        <tr>
+          <td>0:08</td>
+          <td>Call Bot</td>
+          <td>Dạ, anh vui lòng cho em xin họ tên đầy đủ ạ.</td>
+          <td>Bình thường</td>
+          <td>-</td>
+          <td>-</td>
+          <td><button class="btn btn-warning btn-detail" id="btn-3">Nghe thử</button></td>
+        </tr>
+        <tr>
+          <td>0:12</td>
+          <td>Khách hàng</td>
+          <td>Mình muốn tạo thẻ cho người tên là Nguyễn Đình Tường.</td>
+          <td class="text-success">Tích cực</td>
+          <td>Mở thẻ</td>
+          <td>'Họ và tên': 'Nguyễn Đình Tường'</td>
+          <td><button class="btn btn-warning btn-detail" id="btn-4">Nghe thử</button></td>
+        </tr>
+        <tr>
+          <td>0:12</td>
+          <td>Call Bot</td>
+          <td>Anh vui lòng cho em xin số căn cước của anh ạ.</td>
+          <td class="text-success">Tích cực</td>
+          <td>-</td>
+          <td>-</td>
+          <td><button class="btn btn-warning btn-detail" id="btn-5">Nghe thử</button></td>
+        </tr>
+        <tr>
+          <td>0:12</td>
+          <td>Khách hàng</td>
+          <td>Số chứng minh thư của mình là 854052143.</td>
+          <td class="text-success">Tích cực</td>
+          <td>Mở thẻ</td>
+          <td>'CMND': '854052143'</td>
+          <td><button class="btn btn-warning btn-detail" id="btn-6">Nghe thử</button></td>
+        </tr>
+        <tr>
+          <td>0:12</td>
+          <td>Call Bot</td>
+          <td>Em đã ghi nhận thông tin ạ, Sacombank sẽ liên lạc với anh trong thời gian sớm nhất để xác nhận mở thẻ ạ.</td>
+          <td class="text-success">Tích cực</td>
+          <td>-</td>
+          <td>-</td>
+          <td><button class="btn btn-warning btn-detail" id="btn-7">Nghe thử</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <br />
+    <br />
+    <hr />
+    <hr />
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
